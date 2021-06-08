@@ -2,7 +2,14 @@
   text-align: center;
 }
 
-.div {
-  background-color: azure;
+.div::after {
   height: 200vh;
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-image: url("./assets/mbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -50;
 }

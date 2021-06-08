@@ -1,61 +1,103 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import "./Navbar.css";
+import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
 
-const NavBar = () => {
-  const [isSticky, setSticky] = useState(false);
+function NavBar() {
+  const [expand, setExpand] = useState(false);
+  const [sticky, setSticky] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
-    });
-  }, []);
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  }
+
+  window.addEventListener("scroll", scrollHandler);
 
   return (
     <Navbar
-      collapseOnSelect
-      expand='md'
-      variant='light'
+      expanded={expand}
       fixed='top'
-      className={isSticky ? "shadow-sm bg-white py-2" : "py-4"}>
-      <Navbar.Brand
-        to='#home'
-        className='ml-md-5'
-        style={{ color: "#3a4256", fontSize: "1.55rem" }}>
-        <strong>Nasib</strong>
-      </Navbar.Brand>
-
-      <Navbar.Toggle aria-controls='navbar-nav' />
-
-      <Navbar.Collapse id='navbar-nav'>
-        <Nav className='ml-auto'>
-          <Nav.Link
-            to='#home'
-            className='mr-md-5'
-            onClick={() => window.scrollTo(500, 0)}
-            active>
-            Home
-          </Nav.Link>
-          <Nav.Link href='#services' className='mr-md-5' active>
-            About Me
-          </Nav.Link>
-          <Nav.Link href='#skills' className='mr-md-5' active>
-            Services
-          </Nav.Link>
-          <Nav.Link href='#projects' className='mr-md-5' active>
-            Projects
-          </Nav.Link>
-          <Nav.Link href='#contact' className='mr-md-5' active>
-            Contact Us
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+      expand='md'
+      className={sticky || expand ? "shadow-sm bg-white py-2" : "py-4"}>
+      <Container>
+        <Navbar.Brand
+          as={Link}
+          to='/'
+          className='ml-md-5'
+          style={{ color: "#3a4256", fontSize: "1.55rem" }}>
+          <strong>Nasib</strong>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls='responsive-navbar-nav'
+          onClick={() => {
+            setExpand(expand ? false : "expanded");
+          }}
+        />
+        <Navbar.Collapse id='responsive-navbar-nav'>
+          <Nav className='ml-auto' defaultActiveKey='#home'>
+            <Nav.Item>
+              <Nav.Link
+                href='#home'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                Home
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                href='#about'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                About
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                href='#services'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                Services
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                href='#projects'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                Projects
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                href='#contact'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                Contact
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                href='#services'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                Services
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
-};
+}
 
 export default NavBar;
