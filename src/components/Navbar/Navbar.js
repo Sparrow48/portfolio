@@ -68,6 +68,15 @@ function NavBar() {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
+                href='#skills'
+                className='mr-md-4'
+                active
+                onClick={() => setExpand(false)}>
+                Skills
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
                 href='#projects'
                 className='mr-md-4'
                 active
@@ -82,15 +91,6 @@ function NavBar() {
                 active
                 onClick={() => setExpand(false)}>
                 Contact
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href='#services'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                Services
               </Nav.Link>
             </Nav.Item>
           </Nav>
