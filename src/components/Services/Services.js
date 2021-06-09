@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 function Services() {
   return (
     <section id='services' className='text-center py-5'>
-      <Container>
+      <Container fluid>
         <h1>Services</h1>
         <p>The services I’m willing to provide.</p>
         <Row className='text-muted text-justify justify-content-center py-5'>

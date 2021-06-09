@@ -1,101 +1,91 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 
 function NavBar() {
   const [expand, setExpand] = useState(false);
   const [sticky, setSticky] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      setSticky(true);
-    } else {
-      setSticky(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    });
+  }, []);
 
   return (
     <Navbar
       expanded={expand}
       fixed='top'
-      expand='md'
+      expand='lg'
       className={sticky || expand ? "shadow-sm bg-white py-2" : "py-4"}>
-      <Container>
-        <Navbar.Brand
-          as={Link}
-          to='/'
-          className='ml-md-5'
-          style={{ color: "#3a4256", fontSize: "1.55rem" }}>
-          <strong>Nasib</strong>
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls='responsive-navbar-nav'
-          onClick={() => {
-            setExpand(expand ? false : "expanded");
-          }}
-        />
-        <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='ml-auto' defaultActiveKey='#home'>
-            <Nav.Item>
-              <Nav.Link
-                href='#home'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                Home
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href='#about'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                About
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href='#services'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                Services
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href='#skills'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                Skills
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href='#projects'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                Projects
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href='#contact'
-                className='mr-md-4'
-                active
-                onClick={() => setExpand(false)}>
-                Contact
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+      <Navbar.Brand
+        as={Link}
+        to='/'
+        className='ml-md-5'
+        style={{ color: "#3a4256", fontSize: "1.55rem" }}>
+        <strong>Nasib</strong>
+      </Navbar.Brand>
+      <Navbar.Toggle
+        aria-controls='navbar-nav'
+        onClick={() => {
+          setExpand(expand ? false : "expanded");
+        }}
+      />
+      <Navbar.Collapse id='navbar-nav'>
+        <Nav className='ml-auto' defaultActiveKey='#home'>
+          <Nav.Link
+            href='#home'
+            className='mr-md-5'
+            active
+            onClick={() => setExpand(false)}>
+            Home
+          </Nav.Link>
+
+          <Nav.Link
+            href='#about'
+            className='mr-md-5'
+            active
+            onClick={() => setExpand(false)}>
+            About
+          </Nav.Link>
+
+          <Nav.Link
+            href='#services'
+            className='mr-md-5'
+            active
+            onClick={() => setExpand(false)}>
+            Services
+          </Nav.Link>
+
+          <Nav.Link
+            href='#skills'
+            className='mr-md-5'
+            active
+            onClick={() => setExpand(false)}>
+            Skills
+          </Nav.Link>
+
+          <Nav.Link
+            href='#projects'
+            className='mr-md-5'
+            active
+            onClick={() => setExpand(false)}>
+            Projects
+          </Nav.Link>
+
+          <Nav.Link
+            href='#contact'
+            className='mr-md-5'
+            active
+            onClick={() => setExpand(false)}>
+            Contact
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 }
