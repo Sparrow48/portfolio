@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Services from "./components/Services/Services";
 import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <AboutMe />
         <Services />
         <Skills />
+        <Projects />
       </div>
     </Router>
   );
