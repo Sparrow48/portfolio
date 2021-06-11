@@ -14,8 +14,6 @@ function App() {
   return (
     <Router>
       <div className='div'>
-        {console.log(process.env.REACT_APP_User_Id)}
-        <p>hello:{process.env.REACT_APP_User_Id}</p>
         <NavBar />
         <Home />
         <AboutMe />

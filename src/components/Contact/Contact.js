@@ -33,7 +33,7 @@ const Contact = () => {
       <Fade bottom duration={2500} distance='40px'>
         <Container>
           <div className='text-center'>
-            <h1>contact us</h1>
+            <h1>contact Me</h1>
             <h4>Plese leave a message, in case you have any query.</h4>
           </div>
           <form onSubmit={sendEmail} id='contact-form'>
