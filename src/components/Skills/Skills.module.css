@@ -1,3 +1,8 @@
 .skillSection {
   background-color: #f5f5f5;
 }
+
+.skillSection h1 {
+  color: #188de9;
+  font-weight: 900;
+}

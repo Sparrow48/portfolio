@@ -1,11 +1,14 @@
 import React from "react";
+import classes from "./Services.module.css";
 import { Container, Row } from "react-bootstrap";
 import Service from "./Service/Service";
 import Fade from "react-reveal/Fade";
 
 function Services() {
   return (
-    <section id='services' className='text-center py-5'>
+    <section
+      id='services'
+      className={`${"text-center py-5"} ${classes.serviceSection}`}>
       <Container fluid>
         <h1>Services</h1>
         <p>The services I’m willing to provide.</p>
