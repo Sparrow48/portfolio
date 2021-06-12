@@ -9,7 +9,7 @@ function Services() {
     <section
       id='services'
       className={`${"text-center py-5"} ${classes.serviceSection}`}>
-      <Container fluid>
+      <Container fluid className='py-3'>
         <h1>Services</h1>
         <p>The services I’m willing to provide.</p>
         <Row className='text-muted text-justify justify-content-center py-5'>

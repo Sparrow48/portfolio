@@ -3,9 +3,11 @@ import { Col, Container, Row, Image } from "react-bootstrap";
 import Fade from "react-reveal/Fade";
 import Profile from "../../assets/aboutMe.png";
 
+import classes from "./AboutMe.module.css";
+
 function AboutMe() {
   return (
-    <section id='about'>
+    <section id='about' className={classes.aboutMeSection}>
       <Container fluid>
         <Row className='align-items-center justify-content-center'>
           <Col md={4} className='p-md-5 order-2 order-md-2'>
