@@ -11,7 +11,7 @@ function Service(props) {
           className={`${"py-4"} ${classes.card}`}
           style={{ width: "18rem", height: "28rem" }}>
           <Card.Img
-            className='p-3'
+            className={`${"p-3"}`}
             variant='top'
             style={{ width: "18rem", height: "12rem" }}
             src={props.img}

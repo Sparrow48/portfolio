@@ -21,12 +21,12 @@ function NavBar() {
       expanded={expand}
       fixed='top'
       expand='lg'
-      className={sticky || expand ? "shadow-sm bg-white py-2" : "py-4"}>
+      className={sticky || expand ? "shadow-sm bg-white py-2 nav" : "py-4"}>
       <Navbar.Brand
         as={Link}
         to='/'
         className='ml-md-5'
-        style={{ color: "#3a4256", fontSize: "1.55rem" }}>
+        style={{ color: "#188de9", fontSize: "1.55rem" }}>
         <strong>Nasib</strong>
       </Navbar.Brand>
       <Navbar.Toggle

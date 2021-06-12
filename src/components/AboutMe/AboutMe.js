@@ -12,8 +12,8 @@ function AboutMe() {
         <Row className='align-items-center justify-content-center'>
           <Col md={4} className='p-md-5 order-2 order-md-2'>
             <Fade left duaration={2000} distance='40px'>
-              <h2>
-                <span className='name'>
+              <h2 className='pb-3'>
+                <span className={classes.name}>
                   <strong>About Me</strong>
                 </span>
               </h2>

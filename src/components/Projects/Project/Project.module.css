@@ -1,8 +1,9 @@
 .card {
-  background-color: #fbfcfc;
+  background-color: #d0d3d4;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .title {
+  color: #0a0a0a;
   font-weight: 700;
 }

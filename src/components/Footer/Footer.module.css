@@ -1,0 +1,40 @@
+:root {
+  --fs-footer: 1.15rem;
+  --fs-icon: 1rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-footer: 2rem;
+    --fs-icon: 1.7rem;
+  }
+}
+
+.footer {
+  background-color: #7b7d7d;
+  align-items: center;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+.socialList {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+  margin: 0;
+}
+
+.socialListItem {
+  margin: 0 1.5em;
+  font-size: var(--fs-icon);
+  list-style: none;
+}
+
+.footerLink {
+  font-size: var(--fs-footer);
+  text-decoration: none;
+  color: #fefefe;
+}
+.icon {
+  color: #fefefe;
+}
