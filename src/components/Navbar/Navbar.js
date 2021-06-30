@@ -19,69 +19,77 @@ function NavBar() {
   return (
     <Navbar
       expanded={expand}
-      fixed='top'
-      expand='lg'
-      className={sticky || expand ? "shadow-sm bg-white py-2 nav" : "py-4"}>
+      fixed="top"
+      expand="lg"
+      className={sticky || expand ? "shadow-sm bg-white py-2 nav" : "py-4"}
+    >
       <Navbar.Brand
         as={Link}
-        to='/'
-        className='ml-md-5'
-        style={{ color: "#188de9", fontSize: "1.55rem" }}>
+        to="/"
+        className="ml-md-5"
+        style={{ color: "#188de9", fontSize: "1.55rem" }}
+      >
         <strong>Nasib</strong>
       </Navbar.Brand>
       <Navbar.Toggle
-        aria-controls='navbar-nav'
+        aria-controls="navbar-nav"
         onClick={() => {
           setExpand(expand ? false : "expanded");
         }}
       />
-      <Navbar.Collapse id='navbar-nav'>
-        <Nav className='ml-auto' defaultActiveKey='#home'>
+      <Navbar.Collapse id="navbar-nav">
+        <Nav className="ml-auto" defaultActiveKey="#home">
           <Nav.Link
-            href='#home'
-            className='mr-md-5'
+            href="#home"
+            className="mr-md-5"
             active
-            onClick={() => setExpand(false)}>
+            onClick={() => setExpand(false)}
+          >
             Home
           </Nav.Link>
 
           <Nav.Link
-            href='#about'
-            className='mr-md-5'
+            href="#about"
+            className="mr-md-5"
             active
-            onClick={() => setExpand(false)}>
+            onClick={() => setExpand(false)}
+          >
             About
           </Nav.Link>
 
           <Nav.Link
-            href='#services'
-            className='mr-md-5'
+            href="#services"
+            className="mr-md-5"
             active
-            onClick={() => setExpand(false)}>
+            onClick={() => setExpand(false)}
+          >
             Services
           </Nav.Link>
 
           <Nav.Link
-            href='#skills'
-            className='mr-md-5'
+            href="#skills"
+            className="mr-md-5"
             active
-            onClick={() => setExpand(false)}>
+            onClick={() => setExpand(false)}
+          >
             Skills
           </Nav.Link>
 
           <Nav.Link
-            href='#projects'
-            className='mr-md-5'
+            href="#projects"
+            className="mr-md-5"
             active
-            onClick={() => setExpand(false)}>
+            onClick={() => setExpand(false)}
+          >
             Projects
           </Nav.Link>
 
           <Nav.Link
-            href='#contact'
-            className='mr-md-5'
+            href="#contact"
+            className="mr-md-5"
             active
-            onClick={() => setExpand(false)}>
+            onClick={() => setExpand(false)}
+          >
             Contact
           </Nav.Link>
         </Nav>
